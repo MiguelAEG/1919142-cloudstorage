@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { LoginComponent } from './login/login.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { AdminComponent } from './admin/admin.component';
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -34,7 +35,8 @@ const app = initializeApp(environment.firebaseConfig);
     ArticuloDetalleComponent,
     CarritoComponent,
     LoginComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    AdminComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
