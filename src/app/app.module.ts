@@ -19,6 +19,7 @@ import {AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { LoginComponent } from './login/login.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { CategoriasComponent } from './categorias/categorias.component';
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -32,7 +33,8 @@ const app = initializeApp(environment.firebaseConfig);
     InicioComponent,
     ArticuloDetalleComponent,
     CarritoComponent,
-    LoginComponent
+    LoginComponent,
+    CategoriasComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
