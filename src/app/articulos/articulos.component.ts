@@ -44,6 +44,11 @@ export class ArticulosComponent implements OnInit {
   ) { 
     this.coleccionFirebase = this.aFirestore.collection<Articulo>('articulos');
     this.articulosFirebase = this.coleccionFirebase.valueChanges({idField: 'id'});
+    this.articulosFirebase.subscribe(res => {
+
+      console.log(res);
+
+    })
     this.articuloDoc = this.aFirestore.doc<Articulo>('/articulos/1');
     
     //this.articulosCollection = this.af.collection<Articulo>('articulos');
@@ -54,6 +59,7 @@ export class ArticulosComponent implements OnInit {
   }
 
   articulosColeccionFb: Articulo[] = [];
+  
 
   ngOnInit(): void {
 
@@ -100,6 +106,8 @@ export class ArticulosComponent implements OnInit {
 
     task.snapshotChanges().subscribe();
   }
+
+ 
   
 
   carro: number = 0;

@@ -41,7 +41,7 @@
                     
                     <a [routerLink]="['/detalle', articulo.id]">
                         <!--<img src="assets/imagenes/bolsa.jpg" alt="">-->
-                        <img [src]="articulo.img | getDownloadURL" alt="">
+                        <img [src]="articulo.imagen | getDownloadURL" alt="">
                        <!-- <img [src]="articulo.imagen" alt="{{articulo.nombre}}">-->
                     </a>
                     <p class="precio">${{articulo.precio}}</p>
