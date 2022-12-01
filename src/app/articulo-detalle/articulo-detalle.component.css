@@ -10,3 +10,8 @@ ion-button {
     display: block;
     width: 100%;
 }
+
+ion-card{
+    height: 100%;
+    width: 250px;
+}
