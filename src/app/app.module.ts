@@ -9,7 +9,7 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { initializeApp } from "firebase/app";
 import { AngularFireModule } from '@angular/fire/compat';
@@ -44,6 +44,7 @@ const app = initializeApp(environment.firebaseConfig);
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     IonicModule.forRoot()
    /*

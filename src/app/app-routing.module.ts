@@ -27,6 +27,10 @@ const rutas : Routes = [
         path: 'categoria/:categoria',
         component: CategoriasComponent
     },
+    {
+        path: '',
+        redirectTo: '/articulos',
+    }
 ]
 
 @NgModule({
