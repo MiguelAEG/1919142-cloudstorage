@@ -10,4 +10,5 @@ export interface Articulo{
     nombre: string;
     precio: number;
     imagen: string;
+    categoria: String;
   }

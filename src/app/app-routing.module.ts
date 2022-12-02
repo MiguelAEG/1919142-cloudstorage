@@ -24,8 +24,12 @@ const rutas : Routes = [
     },
     {
         path: '',
-        redirectTo: '/articulos', 
+        redirectTo: '/articulos/celulares', 
         pathMatch: 'full'
+    },
+     {
+        path: 'articulos/:categoria',
+        component: ArticulosComponent 
     }
 ]
 

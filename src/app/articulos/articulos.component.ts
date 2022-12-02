@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AgregarCarritoService } from '../agregar-carrito.service';
 
@@ -15,6 +16,9 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
   templateUrl: './articulos.component.html',
   styleUrls: ['./articulos.component.css']
 })
+
+
+
 export class ArticulosComponent implements OnInit {
 
   observaVar = of(1, 2, 3); //Todos los valores por los que pasa esta variable
@@ -25,7 +29,10 @@ export class ArticulosComponent implements OnInit {
     }
   }
 
-  
+
+
+  categoria: string = this.ruta.snapshot.params['categoria'];
+
 
   //private articulosCollection: AngularFirestoreCollection<Articulo>;
   //arts: Observable<Articulo[]>; 
@@ -35,13 +42,17 @@ export class ArticulosComponent implements OnInit {
   articulosFirebase: Observable<Articulo[]>;
   articuloDoc: any;
 
+
   //private test: AngularFirestoreCollection<Articulo>;
 
   constructor(
+    private router: Router,
     private carritoService : AgregarCarritoService,
     private aFirestore: AngularFirestore,
-    private aFireStorage: AngularFireStorage
-  ) { 
+    private aFireStorage: AngularFireStorage,
+    private ruta: ActivatedRoute
+  ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false; 
     this.coleccionFirebase = this.aFirestore.collection<Articulo>('articulos');
     this.articulosFirebase = this.coleccionFirebase.valueChanges({idField: 'id'});
     this.articulosFirebase.subscribe(res => {
@@ -62,6 +73,8 @@ export class ArticulosComponent implements OnInit {
   
 
   ngOnInit(): void {
+        console.log(this.categoria);
+
 
     /* console.log(this.coleccionFirebase.valueChanges({idField: 'id'}).subscribe(res => {
       this.articulosColeccionFb = res;
@@ -76,6 +89,7 @@ export class ArticulosComponent implements OnInit {
   cargarFotos(){
 
   }
+
 
   porcentaje$ : Observable<number>;
   progress : number | undefined;
