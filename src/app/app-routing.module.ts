@@ -4,6 +4,7 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { LoginComponent } from './login/login.component';
+import { CategoriasComponent } from './categorias/categorias.component';
 
 const rutas : Routes = [
     {
@@ -23,14 +24,9 @@ const rutas : Routes = [
         component: LoginComponent
     },
     {
-        path: '',
-        redirectTo: '/articulos/celulares', 
-        pathMatch: 'full'
+        path: 'categoria/:categoria',
+        component: CategoriasComponent
     },
-     {
-        path: 'articulos/:categoria',
-        component: ArticulosComponent 
-    }
 ]
 
 @NgModule({

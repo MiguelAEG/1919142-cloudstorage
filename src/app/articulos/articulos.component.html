@@ -35,7 +35,7 @@
         
 
         <ng-container *ngFor="let articulo of articulosFirebase | async">
-        <ion-col size="12" size-md="3" *ngIf="articulo.categoria==categoria"> <!--"articulosColeccionFb // articulosFirebase | async-->
+        <ion-col size="12" size-md="3"> <!--"articulosColeccionFb // articulosFirebase | async-->
             <ion-card>
                 <ion-card-header>
                     <p>{{articulo.nombre}}</p>

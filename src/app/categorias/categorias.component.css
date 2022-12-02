@@ -1,0 +1,14 @@
+ion-card{
+    height: 100%;
+    width: 250px;
+}
+
+ion-button {
+    --background: #058d9e;
+    --background-hover: #0d9e00;
+    width: 100%;
+}
+
+ion-col p{
+    font-weight: bold;
+}
