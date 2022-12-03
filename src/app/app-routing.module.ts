@@ -5,15 +5,14 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { LoginComponent } from './login/login.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegisterComponent } from './register/register.component';
+
 
 const rutas : Routes = [
     {
         path: 'articulos', 
         component: ArticulosComponent
-    },
-    {
-        path: 'inicio', 
-        component: InicioComponent
     },
     {
         path: 'detalle/:id',
@@ -24,13 +23,18 @@ const rutas : Routes = [
         component: LoginComponent
     },
     {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
         path: 'categoria/:categoria',
         component: CategoriasComponent
     },
+  
     {
-        path: '',
-        redirectTo: '/articulos',
-    }
+        path: 'admin',
+        component: AdminComponent
+    },
 ]
 
 @NgModule({

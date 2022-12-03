@@ -21,6 +21,9 @@ import { LoginComponent } from './login/login.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { AdminComponent } from './admin/admin.component';
+import { RegisterComponent } from './register/register.component';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -36,12 +39,14 @@ const app = initializeApp(environment.firebaseConfig);
     CarritoComponent,
     LoginComponent,
     CategoriasComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireAuthModule,
+    provideAuth(()=>getAuth()),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -55,7 +60,7 @@ const app = initializeApp(environment.firebaseConfig);
       registrationStrategy: 'registerWhenStable:30000'
     }) */
   ],
-  providers: [{ provide: BUCKET, useValue: '' }],
+  providers: [{ provide: BUCKET, useValue: '' }, { provide: 'EMAIL', useValue: '' }, { provide: 'PASSWORD', useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

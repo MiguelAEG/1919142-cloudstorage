@@ -1,33 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Inject } from "@angular/core";
+import { Component, OnInit,  Injectable  } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
-  constructor(
-    private aAuth: AngularFireAuth
-  ) {
+@Injectable()
+export class LoginComponent  {
 
-   }
+  email: string;
+  password: string;
 
-  ngOnInit(): void {
+  constructor (@Inject('EMAIL')email: string, @Inject('PASSWORD')password: string) {
+    this.email = email ?? '';
+    this.password = password ?? '';
+
   }
+  login(){
+     console.log(this.email);
+     console.log(this.password); 
 
-  iniciarSesion(){
-    return new Promise<any>((resolve, reject) => {
-      this.aAuth.signInAnonymously().then((data) => {
-        resolve(data);
-      }).catch((error) => {
-        const codigoError = error.code;
-        const mensajeError = error.message;
-        reject(`Ups!! No se pudo iniciar sesion ${error.message}`)
-      })
-    })
   }
-
 }

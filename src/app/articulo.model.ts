@@ -12,3 +12,9 @@ export interface Articulo{
     imagen: string;
     categoria: String;
   }
+
+  export interface user{
+
+    email: string,
+    password: string;
+  }

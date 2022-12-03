@@ -22,7 +22,10 @@
                 <ion-icon name="log-out" *ngIf="aAuth.user | async as user;"></ion-icon>
                 <span *ngIf="!aAuth.user | async as user;">Inicio de Sesión</span>
                 <span *ngIf="aAuth.user | async as user;">Salir</span>-->
-            <ion-item>
+                 <ion-item>
+                <a href="register">Registrar nueva cuenta</a>
+            </ion-item>
+                <ion-item>
                 <a href="login">Mi Cuenta</a>
             </ion-item>
           </ion-list>
