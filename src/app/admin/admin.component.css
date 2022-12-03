@@ -3,3 +3,9 @@ ion-button{
     --background: #058d9e;
     --background-hover: #0d9e00;
 }
+
+ion-item{
+    margin: 10px;
+    --background: #a0ffe99c;
+}
+
